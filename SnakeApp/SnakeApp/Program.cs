@@ -10,18 +10,9 @@ namespace SnakeApp
     {
         static void Main(string[] args)
         {
-            var p1 = new Point();
-            p1.x = 2;
-            p1.y = 2;
-            p1.symb = '*';
-            p1.Draw();
-
-            var p2 = new Point();
-            p2.x = 4;
-            p2.y = 4;
-            p2.symb = '#';
-            p2.Draw();
-
+            var p1 = new Point(2,2,'*');            
+            var p2 = new Point(4,4,'#');
+            
             Console.ReadLine();
         }        
     }
