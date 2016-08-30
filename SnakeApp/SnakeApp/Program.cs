@@ -10,16 +10,19 @@ namespace SnakeApp
     {
         static void Main(string[] args)
         {
-            int x1 = 1;
-            int y1 = 3;
-            char symb1 = '@';
-            SymbPos(x1, y1, symb1);
-        }
+            var p1 = new Point();
+            p1.x = 2;
+            p1.y = 2;
+            p1.symb = '*';
+            p1.Draw();
 
-        static void SymbPos(int x, int y, char symb)
-        {
-            Console.SetCursorPosition(x, y);
-            Console.Write(symb);
-        }
+            var p2 = new Point();
+            p2.x = 4;
+            p2.y = 4;
+            p2.symb = '#';
+            p2.Draw();
+
+            Console.ReadLine();
+        }        
     }
 }
