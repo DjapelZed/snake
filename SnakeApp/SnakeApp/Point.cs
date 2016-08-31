@@ -24,7 +24,7 @@ namespace SnakeApp
             y = p.y;
             symb = p.symb;
         }
-
+        //Передвигаем точку
         public void Move(int offset, Direction direction)
         {
             if (direction == Direction.RIGHT)
@@ -37,6 +37,13 @@ namespace SnakeApp
             }
             
         }
+        //Удаляем символ
+        public void Clear()
+        {
+            symb = ' ';
+            Draw();
+        }
+
         public void Draw()
         {
             Console.SetCursorPosition(x, y);

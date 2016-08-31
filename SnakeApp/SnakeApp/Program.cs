@@ -21,11 +21,12 @@ namespace SnakeApp
             vertLine.Draw();
             var vertLineR = new VertLines(70, 1, 17, '#');
             vertLineR.Draw();
-
+            //Рисуем питона
             var p = new Point(20, 5, '*');
             p.Draw();
             var snake = new Snake(p, 4, Direction.RIGHT);
             snake.Draw();
+            snake.Move();
             Console.ReadLine();
         }        
     }
