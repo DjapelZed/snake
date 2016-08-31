@@ -243,3 +243,7 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+SnakeApp/TestWindow/App.config
+SnakeApp/TestWindow/Program.cs
+SnakeApp/TestWindow/Properties/AssemblyInfo.cs
+SnakeApp/TestWindow/TestWindow.csproj

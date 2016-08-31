@@ -10,16 +10,16 @@ namespace SnakeApp
     {
         static void Main(string[] args)
         {
-            var p1 = new Point(2,2,'*');
-            p1.Draw();            
-            var p2 = new Point(4,4,'#');
-            p2.Draw();
-
-            var horLine = new HorLines(6, 13, 7, '*');
+            Console.SetWindowSize(72, 19);
+            Console.SetBufferSize(72, 19);        
+            var horLine = new HorLines(1, 70, 1, '#');
             horLine.Draw();
-
-            var vertLine = new VertLines(5, 7, 14, '*');
+            var horLineB = new HorLines(1, 70, 18, '#');
+            horLineB.Draw();
+            var vertLine = new VertLines(1, 1, 17, '#');
             vertLine.Draw();
+            var vertLineR = new VertLines(70, 1, 17, '#');
+            vertLineR.Draw();
 
             Console.ReadLine();
         }        
