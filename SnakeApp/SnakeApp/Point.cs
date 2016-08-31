@@ -17,6 +17,26 @@ namespace SnakeApp
             y = _y;
             symb = _symb;
         }
+
+        public Point(Point p)
+        {
+            x = p.x;
+            y = p.y;
+            symb = p.symb;
+        }
+
+        public void Move(int offset, Direction direction)
+        {
+            if (direction == Direction.RIGHT)
+            {
+                x += offset;
+            }
+            else if (direction == Direction.LEFT)
+            {
+                x -= offset;
+            }
+            
+        }
         public void Draw()
         {
             Console.SetCursorPosition(x, y);

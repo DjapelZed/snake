@@ -11,7 +11,8 @@ namespace SnakeApp
         static void Main(string[] args)
         {
             Console.SetWindowSize(72, 19);
-            Console.SetBufferSize(72, 19);        
+            Console.SetBufferSize(72, 19);
+            //Делаем прямоугольник из #.        
             var horLine = new HorLines(1, 70, 1, '#');
             horLine.Draw();
             var horLineB = new HorLines(1, 70, 18, '#');
@@ -21,6 +22,10 @@ namespace SnakeApp
             var vertLineR = new VertLines(70, 1, 17, '#');
             vertLineR.Draw();
 
+            var p = new Point(20, 5, '*');
+            p.Draw();
+            var snake = new Snake(p, 4, Direction.RIGHT);
+            snake.Draw();
             Console.ReadLine();
         }        
     }
