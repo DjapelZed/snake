@@ -35,6 +35,14 @@ namespace SnakeApp
             {
                 x -= offset;
             }
+            else if (direction == Direction.DOWN)
+            {
+                y += offset;
+            }
+            else if (direction == Direction.UP)
+            {
+                y -= offset;
+            }
             
         }
         //Удаляем символ

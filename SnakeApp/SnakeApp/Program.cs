@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SnakeApp
@@ -22,12 +23,20 @@ namespace SnakeApp
             var vertLineR = new VertLines(70, 1, 17, '#');
             vertLineR.Draw();
             //Рисуем питона
-            var p = new Point(20, 5, '*');
-            p.Draw();
-            var snake = new Snake(p, 4, Direction.RIGHT);
-            snake.Draw();
-            snake.Move();
-            Console.ReadLine();
+            var p = new Point(10, 5, '*');
+            var snake = new Snake(p, 10, Direction.RIGHT);
+            snake.Draw();   
+            while (true)
+            {
+
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey(true);
+                    snake.Control(key.Key);
+                }
+                    Thread.Sleep(100);
+                snake.Move();
+            }           
         }        
     }
 }
