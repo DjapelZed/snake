@@ -10,9 +10,9 @@ namespace SnakeApp
     class Snake : Figure
     {
         Direction direction;
-        public Snake(Point tail, int length, Direction _direction)
+        public Snake(Point tail, int length, Direction direction)
         {
-            direction = _direction;
+            this.direction = direction;
             pList = new List<Point>();
             //Отрисовка змейки
             for(int i = 0; i < length; i++)
@@ -20,6 +20,22 @@ namespace SnakeApp
                 var p = new Point(tail);
                 p.Move(i, direction);
                 pList.Add(p);
+            }
+        }
+
+        internal bool Eat(Point food)
+        {
+            Point head = GetNextPoint();
+            if (head.Hit(food))
+            {
+                head.Draw();
+                food.symb = '*';
+                pList.Add(food);
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 

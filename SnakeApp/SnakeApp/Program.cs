@@ -24,11 +24,22 @@ namespace SnakeApp
             vertLineR.Draw();
             //Рисуем питона
             var p = new Point(10, 5, '*');
-            var snake = new Snake(p, 10, Direction.RIGHT);
-            snake.Draw();   
+            int l = 2;
+            var snake = new Snake(p, l, Direction.RIGHT);
+            snake.Draw();
+
+            Food foodCreator = new Food(17, 70, '$');
+            Point food = foodCreator.CreateFood();
+            food.Draw();
+               
             while (true)
             {
-
+                if (snake.Eat(food))
+                {
+                    food = foodCreator.CreateFood();
+                    food.Draw();
+                    l++;                                       
+                }
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey(true);

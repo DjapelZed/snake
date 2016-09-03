@@ -17,13 +17,14 @@ namespace SnakeApp
             y = _y;
             symb = _symb;
         }
-
+        
         public Point(Point p)
         {
             x = p.x;
             y = p.y;
             symb = p.symb;
         }
+        
         //Передвигаем точку
         public void Move(int offset, Direction direction)
         {
@@ -44,6 +45,10 @@ namespace SnakeApp
                 y -= offset;
             }
             
+        }
+        public bool Hit(Point p)
+        {
+            return p.x == this.x && p.y == this.y;
         }
         //Удаляем символ
         public void Clear()
