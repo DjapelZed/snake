@@ -12,8 +12,8 @@ namespace SnakeApp
         Direction direction;
         public Snake(Point tail, int length, Direction direction)
         {
-            this.direction = direction;
             pList = new List<Point>();
+            this.direction = direction;
             //Отрисовка змейки
             for(int i = 0; i < length; i++)
             {
@@ -26,7 +26,7 @@ namespace SnakeApp
         internal bool Eat(Point food)
         {
             Point head = GetNextPoint();
-            if (head.Hit(food))
+            if (head.IsHit(food))
             {
                 head.Draw();
                 food.symb = '*';
@@ -37,6 +37,16 @@ namespace SnakeApp
             {
                 return false;
             }
+        }
+        internal bool IsHitTail()
+        {
+            var head = pList.Last();
+            for (int i = 0; i < pList.Count - 2; i++)
+            {
+                if (head.IsHit(pList[i]))
+                    return true;
+            }
+            return false;
         }
 
         internal void Move()
